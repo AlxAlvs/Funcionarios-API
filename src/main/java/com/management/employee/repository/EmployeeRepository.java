@@ -34,16 +34,19 @@ public class EmployeeRepository implements EmployeeService {
 
     @Override
     public Employee update(Long id, Employee employee) {
+        log.info("Updating Employees");
         return employees.put(id, employee);
     }
 
     @Override
     public Employee deleteById(Long id) {
+        log.info("Deleting Employees");
         return employees.remove(id);
     }
 
     @Override
     public Employee getEmployee(Long id) {
+        log.info("Getting Employee");
         return employees.getOrDefault(id, null);
     }
 }
